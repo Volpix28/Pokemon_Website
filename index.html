@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Evolutions</title>
+
+    <link rel="stylesheet" href="res/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="res/js/lib/d3.v7.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-dispatch@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-quadtree@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-timer@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-force@3"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+</head>
+
+<body>
+    <div class="content-wrapper container-lg">
+        <div class="intro-picture"><img src="res/img/intro_pic.webp" alt="Pokemon Evulutions"></div>
+
+        <div class="info-section">
+            <div class="info-item">
+                <p>
+                    Pokémon ist mit seiner Serie von Videospielen eines der beliebtesten Franchises der Welt.
+                    Doch was sind eigentlich Pokémon? Pokémon sind fiktive Lebewesen, welche meistens auf Tieren, Pflanzen oder Gegenständen basieren.
+                </p>
+            </div>
+            <div class="info-item">
+                <p>
+                    In den Spielen können diese von den Spielern (Trainern) gefangen, gesammelt und trainiert werden. Dabei verfolgt der Spieler immer zwei Ziele:
+                    Zum einen gilt es den Pokédex, der die Daten aller gesehenen und gefangenen Pokémon speichert, zu vervollständigen. Das zweite Ziel besteht darin, möglichst starke Pokemon zu fangen und diese zu trainieren, sodass man mithilfe dieses Teams die Pokémon -Liga bezwingt und somit der neue Champ der Region wird. Dazu müssen zunächst aber 8 Arenaleiter besiegt werden, von welchen man jeweils mit einem Orden beim Sieg ausgezeichnet wird. Die 8 Orden gemeinsam bilden quasi die Eintrittskarte zur Siegesstraße zu den Top Vier, also vier besonders starke Trainer einer Region und letztendlich zum Pokémon Champ.
+                </p>
+            </div>
+            <div class="info-item">
+                <p>
+                    Manche wenige Pokémon kommen im ganzen Spiel nur ein einziges Mal vor – diese werden legendäre Pokémon genannt. Diese zeichnen sich weiters durch besondere Stärke und Fähigkeiten aus.
+                    <br/><br/>
+                    1996 wurden in Japan die ersten Pokémon Spiele herausgebracht, welche in weiterer Folge die ganze Welt erobern sollten.
+                    Neben den Pokémon Spielen gibt es auch noch ein riesiges Franchisesystem,  Sammelkartenspiel, eine Anime-Serie, sowie mehrere Kinofilme. Insgesamt gilt die Reihe als eines der erfolgreichsten Produkte der modernen Spieleindustrie.
+                </p>
+            </div>
+            <div class="info-item">
+                <p>
+                    Diese Scrollytelling-Story richtet sich an alle Pokémon -Enthusiasten und welche es noch werden wollen. Dabei soll mithilfe verschiedenster Daten über Pokémon die Entwicklung der Pokémon-Videospiele nachgezeichnet und näher gebracht werden. Dabei konzentriert sich dieses Scrollytelling auf die erste bis fünfte Generation (!).
+                    <br/><br/><br/>
+                    <b>Wir wünschen euch viel Spaß!</b>
+                    <br/><br/>
+                    Isabella Deak, Alexander Piglmann, Alexander Roucka, Jan Stöß
+                </p>
+            </div>
+        </div>
+
+        <div class="dialog-funfact">
+            <div class="dialog-funfact-img-wrapper">
+                <img class="dialog-funfact-img" src="res/img/pika_fact.png" alt="Pokemon-Bild">
+            </div>
+            <ul class="dialog-hint">
+                <li>
+                    <strong>Funfact</strong><br/>
+                    Wusstest du eigentlich, dass das Geschlecht des allseits bekannten Pokémon Maskottchen Pikachu,
+                    durch dessen Schwanz bestimmt werden kann? Während der Schwanz eines männlichen Pikachus flach und kantig geformt ist,
+                    weist der Schwanz eines weiblichen Pikachus ein Herzform-Ende auf.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Generation 1 -->
+        <div class="generation-wrapper">
+            <h2 class="gen-header">Generation 1</h2>
+            <div class="dialog-text-wrapper">
+                <p class="dialog-text">
+                    Die erste Generation an Pokémon Spielen handelt von dem Protagonisten Rot, welcher der Allerbeste sein möchte, wie es keiner vor ihm war. Dabei möchte er konkret Champ der Kanto Region werden – während er im ständigen Kampf mit seinem Rivalen seit Tag 1 Blau steht, welcher dasselbe Ziel verfolgt. Auf seiner Reise durch die 10 Städte von Kanto verbunden durch 28 verschiedene Routen, kämpft sich unser Held durch die Arenen der Region – immer mit dem Rivalen in seinem Schatten. Doch Blau ist nicht das einzige Hindernis auf dem Weg Pokémon Champ zu werden. Kanto wird von einer heimtückischen Bande an Schurken – dem Team Rocket – heimgesucht. Das Ziel der Verbrecherorganisation ist es mit der Ausbeutung von Pokémon die Weltherrschaft zu erlangen. Angeführt werden sie durch Giovanni, der gleichzeitig der letzte Arenaleiter der Region ist, aber seine Zeit lieber in die Machenschaften des Team Rockets steckt. Es liegt an Rot, Team Rocket zu stoppen und Kanto vor dem Unheil zu bewahren.
+                    <br/>
+                    In der Zusatzedition Gelb, welche auf die Haupteditionen Rot und Blau aufsetzt, kann man seine Reise durch die Kanto Region mit Pikachu als Begleiter Pokémon bestreiten – genauso wie der Protagonist des Animes Ash. Hierbei kann mit dem Pikachu ähnlich wie in der Serie viel interagiert werden und dessen, manchmal bockiges, Verhalten beobachtet werden.
+                </p>
+            </div>
+
+            <!-- Spiele -->
+            <div class='poke-games-wrapper three-children'>
+                <div class="poke-games-header-wrapper">
+                    <h3 class="poke-games-header">Hauptspiele der Generation</h3>
+                </div>
+                <div class="poke-games">
+                    <img class="gen-pictures game-pic1" src="res/img/Gen%201/rot.jpg" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures game-pic2" src="res/img/Gen%201/blau.jpg" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures game-pic3" src="res/img/Gen%201/gelb.jpg" alt="Pokemonspiel Bild">
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div class="dialog-hint-wrapper sales-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Sales</strong><br/>
+                        Mit 45 Millionen verkauften Einheiten (Stand – 2017) führen die Spiele der 1. Generation das Ranking der meistverkauftesten Pokemon-Spiele. Dabei wurden die beiden Spiele “Rot” & “Blau” aus dem Jahr 1996 insgesamt 31 Millionen und die Edition “Gelb” aus dem Jahr 1998 14,6 Millionen Mal verkauft. Dies sollte den Grundstein für den Erfolg aller zukünftiger Pokemon Generation legen.
+                    </li>
+                </ul>
+                <div id="sales_1" class="chart-wrapper"></div>
+            </div>
+
+
+            <!-- Anzahl -->
+            <div class="dialog-hint-wrapper anzahl-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Anzahl der Pokémon </strong><br/>
+                        Die ersten Pokémon Spiele führen den Spieler in eine Welt mit 151 Pokémon, welche es alle zu fangen gilt. Dabei sind diese in den ersten Generationen noch sehr stark an bekannte Tiere wie Vögel, Käfer, Enten, etc. angelehnt.
+                        Zudem gibt es 5 legendäre Pokemon, welche im Laufe des Spiels gefangen werden können.
+
+                        Achtung: Das legendäre Pokemon “Mew” kann nur durch den berühmten Mew-Glitsch erhalten werden! <a href="https://pokewiki.de/Mew-Glitch" target="_blank">[Link]</a>
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <button id="all_1">Alle Pokemon</button>
+                    <button id="legendary_1">Legendäre Pokemon</button>
+                </div>
+                <div id='anzahl_1' class="chart-wrapper"></div>
+            </div>
+
+            <!-- Typenverteilung -->
+            <div class="dialog-hint-wrapper type-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Typenverteilung </strong><br/>
+                        Neben dem wurden 15 verschiedene Typen eingeführt. Dabei verfolgen diese im Kamp eines „Schere-Stein-Paper“-ähnlichen Prinzips, so dass jeder Typ sehr bzw. wenig effektiv gegenüber anderen Typen sein kann. Im Spiel gilt es somit über die verschiedenen Typen und ihren Stärken und Schwächen Bescheid zu wissen, um den Kampf für sich zu entscheiden.
+                        <br/>
+                        Übrigens: Wusstest du, dass keine andere Generation so viele Gift Pokémon enthält wie die allererste Generation?
+                    </li>
+                </ul>
+                <div id="treemap1" class="chart-wrapper"></div>
+            </div>
+
+            <!-- Bubbles -->
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Alle Pokemon der Generation</strong><br/>
+                        Nun wollen wir dir die einzelnen Pokemon der 1. Generation näherbringen. Jedes Pokemon hat verschiedene Werte, welche im Kampf relevant sind. Klick auf die Bubbles, um noch mehr über die Pokémon der ersten Generation zu erfahren!
+                        <br/>
+                        Info: Die Größe der Bubbles entspricht der Stärke und die Farbe dem Typen des jeweiligen Pokémons.
+                    </li>
+                </ul>
+                <div id="bubbles-1">
+                    <div class="poke-bubbles-wrapper row">
+                            <svg class="poke-bubbles col shadow-sm"></svg>
+                            <div class="poke-bubbles-details col card shadow-sm p-3 bg-white">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <div class="row">
+                                            <div class="col-auto poke-pic-wrapper">
+                                                <img class="poke-pic" loading="lazy" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Pokemon Sprite">
+                                            </div>
+                                            <div class="col poke-detail-title">
+                                                <span>#1 Bisasam</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 mb-4">Pokemon Name</dt>
+                                        <dd class="col-sm-7 mb-4 poke-detail-name">Bisasam</dd>
+
+                                        <dt class="col-sm-5 mb-2">Primär Typ</dt>
+                                        <dd class="col-sm-7 mb-2 poke-detail-type1"><span class="background-color-grass">Pflanze</span></dd>
+
+                                        <dt class="col-sm-5 mb-4">Sekundär Typ</dt>
+                                        <dd class="col-sm-7 mb-4 poke-detail-type2"></dd>
+                                    </dl>
+                                    <div class="poke-stats-wrapper">
+                                        <svg class="poke-stats"></svg>
+                                    </div>
+                                    <div>
+                                        <!-- TODO strong against -->
+                                        <!-- TODO weak against -->
+                                    </div>
+                                    <div class="poke-detail-wiki-link">
+                                        <a href="https://www.pokewiki.de/?search=Bisasam" target="_blank">Pokewiki Link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="dialog-hint-wrapper type-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        Kannst du bei den Bubbles Mewtu finden? Dieses Pokémon hat von allen mit 194 den höchsten Wert beim Special Attack!<br/>
+                        Ein weiteres interessantes Pokémon, was du dir anschauen könntest, ist Relaxo. Was finden wir an Relaxo besonders? Es hat tatsächlich einen BMI von 104,3 – zum Vergleich: Der Normalwert bei einem Menschen liegt zwischen 18,5 und 25,0. Wir finden man kann gut erahnen, zu welcher Kraft ein Relaxo fähig ist.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Funfact -->
+            <div class="dialog-funfact">
+                <div class="dialog-funfact-img-wrapper">
+                    <img class="dialog-funfact-img" src="res/img/Gen%201/grün.jpg" alt="Pokemon-Bild">
+                </div>
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Wusstest du?  Dass es noch eine 4. Edition in der 1. Generation gibt, welche fast als geheime Edition in Europa angesehen werden kann? Dabei handelt es sich um die grüne Edition, dessen Covers der Pflanzen-Starter der 1. Generation Bisaflor ziert. Und was macht diese Edition jetzt so geheimnisvoll, vor allem hierzulande? Sie ist lediglich in Japan entschieden, womit sie uns leider wohl vorenthalten ist. Aber keine Sorge, sie unterscheidet sich eigentlich nicht groß von den Editionen, die auch hierzulande genossen werden können.
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog-funfact reverse">
+                <div class="dialog-funfact-img-wrapper">
+                    <img class="dialog-funfact-img" src="res/img/nebulak.png" alt="Pokemon-Bild">
+                </div>
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Zudem sind Nebulak und Apollo aus der 1. Generation mit 0/1 kg die leichtesten Pokemon. Dies liegt jedoch daran, dass sie Geister sind und daher beinahe kein Gewicht haben.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Generation 2 -->
+        <div class="generation-wrapper">
+            <h2 class="gen-header">Generation 2</h2>
+            <div class="dialog-text-wrapper">
+                <p class="dialog-text">
+                    Die Handlung der zweiten Generation setzt etwa 3 Jahre nach der Geschichte der 1. Generation an, in welcher die neue Region Johto erkundet wird. Dabei schlüpft man erneut in die Rolle des Protagonisten Gold, ein Charakter aus einem kleinen Dorf mit einem großen Traum – Pokémon Champ werden. Doch auch hier werden unserem Helden einige Steine in den Weg gelegt: Nach der Niederlage in der 1. Generation gegen Rot ist die Verbrecherorganisation Team Rocket mit ihrem Anführer Giovanni in Johto untergetaucht und schmiedet erneut Pläne, um die Weltherrschaft zu erlangen. Es liegt an Gold, Johto vor Team Rocket auf seiner Reise zu beschützen. Diese wird auch nicht gerade dadurch vereinfacht, dass ihm immer ein Pokémon-Trainer, welcher davon besessen ist, der Stärkste zu sein, auf den Fersen liegt. Es handelt sich um den Rivalen Silber, der, anstatt dem Training seiner Pokémon mit Geduld und Zuneigung entgegenzutreten, bei einer Niederlage die alleinige Schuld seinen Pokémon gibt – ganz anders als unser Held. Es beginnt ein ständiger Wettkampf zwischen Gold und Silber um den Titel Pokémon-Champ zu erlangen – ein Kampf zwischen zwei Trainern, die nicht unterschiedlicher sein könnten. Doch einer der Trainer wird es nie zu den Top Vier schaffen – vor dem Eintritt in die Halle der Liga findet ein letzter alles entscheidender Kampf zwischen Gold und Silber statt. Unser Held gelingt es seinen Rivalen zu besiegen und noch wichtiger, ihn zum Nachdenken anzuregen. Silber gesteht sich nach diesem letzten Kampf ein, dass er seinen Pokémon-Partnern mehr Respekt entgegenbringen muss, nur so können diese letztendlich ein Team werden. Den Rivalen besiegt gilt es die Top Vier und letztendlich den amtierenden Pokémon-Champ Siegfried herauszufordern und schlussendlich zu besiegen. Doch ist damit wirklich der stärkste Pokémon Trainier aller Zeiten bekämpft? Diese Frage führt den Protagonisten als neuer Pokémon-Champ von Johto in eine altbekannte Welt – die Kanto Region. Hier gilt es die Arenaleiter herauszufordern – darunter zahlreiche bekannte Gesichter. Den krönenden Abschluss bildet das Besteigen des Silberberges, an dessen Spitze der beste Trainer bisher wartet, der Protagonist der 1. Generation Rot. Doch neben der Reise zu den Top Vier in der Johto Region und das Bekämpfen des stärksten Trainers aller Zeiten gibt es noch andere Rätsel zu entdecken: Was hat es mit dem mysteriösen Pokémon auf sich, dass angeblich über Johto wacht? Und was steckt hinter dem sagenumwobenen Trio der Legendären Bestien – wo sind sie hingegangen?
+                </p>
+            </div>
+
+            <!-- Spiele -->
+            <div class="poke-games-wrapper three-children">
+                <div class="poke-games-header-wrapper">
+                    <h3 class="poke-games-header">Hauptspiele der Generation</h3>
+                </div>
+                <div class="poke-games">
+                    <img class="gen-pictures game-pic1" src="res/img/Gen%202/gold.png" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures game-pic2" src="res/img/Gen%202/kristall.png" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures game-pic3" src="res/img/Gen%202/silber.jpg" alt="Pokemonspiel Bild">
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div class="dialog-hint-wrapper sales-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Sales </strong><br/>
+                        Mit 30 Millionen Einheiten die 2. Generation nicht ganz an den einmaligen Erfolg seiner Vorgänger anknüpfen Nichtdestotrotz erfreuten sich die Spiele ins besonders in Japan großer Beliebtheit.<br/>
+                        Wusstest du? - Dass Gold und Silber eigentlich die letzten Main Games sein sollten? Der damalige CEO hat sich dann jedoch entschieden die Reihe doch weiterzuführen, einfach nur um zu sehen, wie sich die Spiele entwickeln könnten – wenn man die Verkaufszahlen betrachtet, war das wohl die richtige Entscheidung.
+                    </li>
+                </ul>
+                <div id="sales_2" class="chart-wrapper"></div>
+            </div>
+
+
+            <!-- Anzahl -->
+            <div class="dialog-hint-wrapper anzahl-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Anzahl der Pokémon </strong><br/>
+                        “Prepare yourself! Winter is coming.” - Die 2. Generation ist mit lediglich 100 neuen Pokémon jene Generation, mit welcher die wenigsten Pokémon eingeführt wurden Dies hängt damit zusammen, dass die 2. Edition als Extension zur 1. Generation gedacht war, wie der Plot bereits gezeigt hat.
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <button id="all_2">Alle Pokémon</button>
+                    <button id="legendary_2">Legendäre Pokémon</button>
+                </div>
+                <div id='anzahl_2' class="chart-wrapper"></div>
+            </div>
+
+            <!-- Typenverteilung -->
+            <div class="dialog-hint-wrapper type-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Typenverteilung </strong><br/>
+                        Offiziell wurden in der 2. Generation gleich zwei neue Typen eingeführt, wodurch aus 15 verschiedenen Typen 17 wurden: Unlicht und Stahl.<br/>
+                        [Falls du dich nun wunderst. In unserer Graphik sind alle finalen 18-Typen vorhanden. Dies liegt daran, dass die Pokemon der älteren Generationen mit den neuen Typen upgedatet wurden. Bsp.: Ein Magnetilo (Typ Elektro – 1. Gen) wurde mit Einführung des Typen “Stahls” nun Typ Elektro/Stahl.]
+                    </li>
+                </ul>
+
+                <div class="action-bar">
+                    <select id="selectButton_2"></select>
+                </div>
+                <div class="chart-wrapper type-and-chart">
+                    <div id="treemap2" class="col"></div>
+                    <div id="typen_2" class="col"></div>
+                </div>
+            </div>
+
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Anzahl der Typen</strong><br/>
+                        Weites stellt dieses Liniendiagramm die Entwicklung der Typenanzahl von erster zu zweiter Generation dar. Suche dir deinen Lieblingstypen und schaue wie viele Typen in beide Generationen vorhanden ist.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Bubbles -->
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Alle Pokemon der Generation</strong><br/>
+                        Klick auf die Bubbles, um noch mehr über die Pokémon der zweiten Generation zu erfahren!
+                    </li>
+                </ul>
+                <div id="bubbles-2">
+                    <div class="poke-bubbles-wrapper row">
+                        <svg class="poke-bubbles col shadow-sm"></svg>
+                        <div class="poke-bubbles-details col card shadow-sm p-3 bg-white">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <div class="row">
+                                        <div class="col-auto poke-pic-wrapper">
+                                            <img class="poke-pic" loading="lazy" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Pokemon Sprite">
+                                        </div>
+                                        <div class="col poke-detail-title">
+                                            <span>#1 Bisasam</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <dl class="row">
+                                    <dt class="col-sm-5 mb-4">Pokemon Name</dt>
+                                    <dd class="col-sm-7 mb-4 poke-detail-name">Bisasam</dd>
+
+                                    <dt class="col-sm-5 mb-2">Primär Typ</dt>
+                                    <dd class="col-sm-7 mb-2 poke-detail-type1"><span class="background-color-grass">Pflanze</span></dd>
+
+                                    <dt class="col-sm-5 mb-4">Sekundär Typ</dt>
+                                    <dd class="col-sm-7 mb-4 poke-detail-type2"></dd>
+                                </dl>
+                                <div class="poke-stats-wrapper">
+                                    <svg class="poke-stats"></svg>
+                                </div>
+                                <div>
+                                    <!-- TODO strong against -->
+                                    <!-- TODO weak against -->
+                                </div>
+                                <div class="poke-detail-wiki-link">
+                                    <a href="https://www.pokewiki.de/?search=Bisasam" target="_blank">Pokewiki Link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Funfact -->
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Stats-Facts</strong><br/>
+                        Health - Wusstest du, dass Heiteira mit 255 das Pokemon mit den höchsten Health-Wert ist?<br/>
+                        Attack - Skaraborn hat mit 185 den höchsten Attack-Wert.<br/>
+                        Defense – Sowohl Stahlos, als auch Pottrott aus 2. Generation besitzen mit 230 höchsten Defense-Wert.<br/>
+                        Special-Defense -  Pottrott dominiert die Special-Defense mit einem Wert von 230.<br/>
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        “Eine Generation sie alle zu knechten“ – wusstest du, dass in der 2. Generation die 4 Pokémon mit den allgemein höchsten Stats eingeführt wurden? Vielleicht kannst du ja ihre Bubbles finden 😉<br/>
+                        Du kannst versuchen, unter den Bubbles die neuen Pokémon der Generation mit den neu eingeführten Typen zu finden. Tipp: Braun steht für Unlicht, Grau für Stahl.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dialog-funfact">
+                <img style="float: left;" class="dialog-funfact-img" src="res/img/pokeballs.png" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Der erste Pokeball überhaupt wurde in der Johto Region kreiert – nicht in der Region der 1. Generation Kanto, wie man es erwarten würde.
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog-funfact reverse">
+                <img style="float: left;" class="dialog-funfact-img" src="res/img/marill.png" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Das Pokemon Marill wechselt sein Geschlecht, wenn es sich zu Azurill entwickelt (männlich -> weiblich).
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Generation 3 -->
+        <div class="generation-wrapper">
+            <h2 class="gen-header">Generation 3</h2>
+            <div class="dialog-text-wrapper">
+                <p class="dialog-text">
+                    Die 3. Generation begrüßt uns mit einer komplett neuen Storyline ohne Kompatibilität zu den ersten beiden Editionen in der Hoenn Region. Schon anfangs machen sich Unterschiede zu den Vorgängern bemerkbar: Unser Protagonist kommt überhaupt erst in die Hoenn Region, da dieser mit seinen Eltern aufgrund der neuen Position des Vaters als 5. Arenaleiter hinzieht. Es lässt sich erahnen, dass die Liebe zum Training von Pokémon in der Familie liegt und auch unser Protagonist wieder mit dem Ziel, seinen Vater entgegenzutreten und Pokémon-Champ der Hoenn Region zu werden, seine Reise quer durch die Region antritt. Doch dazu braucht es wie sonst auch einen ersten treuen Begleiter. Das Starter Pokémon erhält man hier wie üblich durch den Pokémon Professor der Region. Man beobachtet, wie dieser von einem wilden Pokémon angegriffen wird und rettet diesen, woraufhin man ein Starter Pokémon auswählen darf. Mit einem neuen besten Freund in der Tasche geht es los ins Abenteuer – doch natürlich nicht ohne eine ständige Macht messen mit einem Rivalen. Besser gesagt, mit einer Rivalin – Maike, die Tochter des Pokémon Professors. Während des Spiels gilt es einige Male gegen die Rivalin anzutreten und miteinander zu wachsen – im Gegensatz zu den Vorgänger Versionen ist hier von Anfang an ein respektvolles Verhalten zwischen Protagonisten und Rivalin gegeben – aber lange noch kein freundschaftliches. Während der Reise begegnet man jedoch noch einem zweiten Rivalen, Heiko, der anfangs einen Underdog darstellt, doch mit der Zeit immer selbstbewusster und ein ernstzunehmender Gegner wird. Auch Heikos Traum ist es, ein erfolgreicher Pokémon Trainer zu werden, weswegen es auch bei ihm gilt, ihn zu übertrumpfen. Leider beherbergt die Hoenn Region auch Unheil: Sie ist Heimat von gleich zwei Verbrecherorganisationen, Team Aqua und Team Magma. Je nachdem in welcher Edition man sich befindet, gilt es die Machenschaften der Organisationen zu verhindern. Dabei wird in der Saphir Edition durch das Team Aqua versucht, die Weltmeere zu vergrößern, um neuen Platz für Wasser- Pokémon zu schaffen, mit der Begründung, dass ohnehin alles Leben aus dem Wasser stammt. In der Rubin Edition möchte das Team Magma genau Gegenteiliges erreichen: Diese versuchen mit aller Macht mehr Landmasse zu schaffen, umso mehr Lebensraum für Land-Pokémon und Menschen zu schaffen. Eins haben die rivalisierenden Teams gemeinsam: Sie würden alles tun, um ihre Ideologie in die Tat umzusetzen. Im Laufe der Geschichte passiert dies auch. Die Lage spitzt sich in beiden Editionen zu, als das jeweilige vertretende Team eine Klimakatastrophe heraufbeschwört: In Saphir wird durch Team Aqua das legendäre Wasser-Pokémon Kyogre und in Rubin durch Team Magma das legendäre Boden-Pokémon Groudon aus ihrem tiefen Schlaf erweckt. Gegen die Erwartungen der Teams, können diese die legendären Pokémon aber nicht im Zaum halten, sodass diese erbost über ihre Auferstehung in der Hoenn Region wüten. Es liegt an unserem Helden, Kyogre bzw. Groudon zu besänftigen und somit die Bewohner von Hoenn zu retten. Ganz schön große Aufgabe, für einen 11-Jährigen…<br/>
+                    <br/>
+                    Die Zusatzedition Smaragd ist stark an den Haupteditionen angelegt, umfasst jedoch eine breitere Storyline, in welcher sowohl Team Aqua als auch Team Magma gleichzeitig der Hoenn Region Probleme bereiten. Folglich wüten gleich beide legendäre Pokémon und geben sich einen Kampf um die Erweiterung der Wasser- und Bodenlandschaft. Auch hier liegt es an unserem Helden, eine Lösung zu finden, Kyogre und Groudon zu besänftigen – vielleicht mithilfe des mysteriösen Drachen Rayquaza, welcher Schützer des Luftraums ist?
+                </p>
+            </div>
+
+            <!-- Spiele -->
+            <div class="poke-games-wrapper three-children">
+                <div class="poke-games-header-wrapper">
+                    <h3 class="poke-games-header">Hauptspiele der Generation</h3>
+                </div>
+                <div class="poke-games">
+                    <img class="gen-pictures game-pic1" src="res/img/Gen%203/ruby.jpg" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures game-pic2" src="res/img/Gen%203/saphir.jpg" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures game-pic3" src="res/img/Gen%203/smaragd.jpg" alt="Pokemonspiel Bild">
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div class="dialog-hint-wrapper sales-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Sales </strong><br/>
+                        Auch wenn die drei Spiele der dritten Generation (Rubin, Saphir “ Smaragd) den bislang kleinsten Anteil der Verkäufe einnehmen, wurden trotz allem bis 2017 eine beachtliche Menge von 23,28 Millionen Stück weltweit verkauft.<br/>
+                        Wusstest du, dass von den 5 Generationen in der 3. Generation die meisten Pokémon-Spiele und Games mit Bezug auf Pokémon erschienen sind? Dazu zählen nicht nur die hier vorgestellten Hauptreihen, sondern auch Remakes oder ganz andere Konzepte von Pokémon-Spielen, wie Pokémon Mystery Dungeon.
+                        <a href="https://pokewiki.de/Liste_der_Pok%C3%A9mon-Spiele" target="_blank">[Link]</a>
+                    </li>
+                </ul>
+                <div id="sales_3" class="chart-wrapper"></div>
+            </div>
+
+
+            <!-- Anzahl -->
+            <div class="dialog-hint-wrapper anzahl-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Anzahl der Pokémon </strong><br/>
+                        Mit weiteren 117 Pokemon steigt die Anzahl der nun verfügbaren Taschenmonster kontinuierlich an.<br/>
+                        Besonders cool ist jedoch die Anzahl der neu eingeführten legendären Pokemon! Im Gegensatz zu den Vorgängern sind in der 3. Generation nun noch mehr legendäre Pokémon antreffbar – aber überzeug dich am besten selbst davon!
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <button id="all_3">Alle Pokémon</button>
+                    <button id="legendary_3">Legendäre Pokémon</button>
+                </div>
+                <div id='anzahl_3' class="chart-wrapper"></div>
+            </div>
+
+            <!-- Typenverteilung -->
+            <div class="dialog-hint-wrapper type-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Typenverteilung </strong><br/>
+                        Hinsichtlich der Typen kam es nicht wie in der 2. Generation zu gravierenden Änderungen, wie der Einführung von neuen Typen.<br/>
+                        Eine entscheidende Neuerung brachte die 3. Generation jedoch mit sich: Die Einführung von Fähigkeiten von Pokemon. Somit wurde den Pokemon-Kämpfen eine weitere Tiefe gegeben, was insbesondere die Kompetitive-Szene stark vorangetrieben hat.<br/>
+                        Besonders Fans von Pokemon des Typ Wassers dürfen sich freuen: Mit 28 Pokemon sind nun insgesamt 78 Wasserpokemon vorhanden.
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <select id="selectButton_3"></select>
+                </div>
+                <div class="chart-wrapper type-and-chart">
+                    <div id="treemap3"></div>
+                    <div id="typen_3"></div>
+                </div>
+
+            </div>
+
+            <!-- Bubbles -->
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Alle Pokemon der Generation</strong><br/>
+                        Klick auf die Bubbles, um noch mehr über die Pokémon der dritten Generation zu erfahren!
+                    </li>
+                </ul>
+            </div>
+            <div id="bubbles-3">
+                <div class="poke-bubbles-wrapper row">
+                    <svg class="poke-bubbles col shadow-sm"></svg>
+                    <div class="poke-bubbles-details col card shadow-sm p-3 bg-white">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <div class="row">
+                                    <div class="col-auto poke-pic-wrapper">
+                                        <img class="poke-pic" loading="lazy" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Pokemon Sprite">
+                                    </div>
+                                    <div class="col poke-detail-title">
+                                        <span>#1 Bisasam</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <dl class="row">
+                                <dt class="col-sm-5 mb-4">Pokemon Name</dt>
+                                <dd class="col-sm-7 mb-4 poke-detail-name">Bisasam</dd>
+
+                                <dt class="col-sm-5 mb-2">Primär Typ</dt>
+                                <dd class="col-sm-7 mb-2 poke-detail-type1"><span class="background-color-grass">Pflanze</span></dd>
+
+                                <dt class="col-sm-5 mb-4">Sekundär Typ</dt>
+                                <dd class="col-sm-7 mb-4 poke-detail-type2"></dd>
+                            </dl>
+                            <div class="poke-stats-wrapper">
+                                <svg class="poke-stats"></svg>
+                            </div>
+                            <div>
+                                <!-- TODO strong against -->
+                                <!-- TODO weak against -->
+                            </div>
+                            <div class="poke-detail-wiki-link">
+                                <a href="https://www.pokewiki.de/?search=Bisasam" target="_blank">Pokewiki Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        Unter den Bubbles versteckt sich auch das schwerste Pokémon von allen fünf Generationen – Groudon –, sowie das größte Pokémon – Wailord. Kannst du die beiden Schwergewichte finden?
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Funfact -->
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Stats-Facts</strong><br/>
+                        Initiative - Wusstest du, dass Deoxys (Initiative-Form) mit 180 das Pokemon mit dem höchsten Intiative-Wert ist?
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog-funfact reverse">
+                <img class="dialog-funfact-img" src="res/img/wailord.png" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Wusstest du, dass das Maskottchen Pikachu in das größte Pokémon der fünf Generationen Wailord ganze 3000x hineinpasst?
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog-funfact">
+                <img style="padding: 0 100px" class="dialog-funfact-img" src="res/img/vater.png" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Die Editionen Rubin und Saphir sind die einzigen Spiele, in welcher der Vater des Protagonisten gezeigt wird.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Generation 4 -->
+        <div class="generation-wrapper">
+            <h2 class="gen-header">Generation 4</h2>
+            <div class="dialog-text-wrapper">
+                <p class="dialog-text">
+                    Auch die 4. Generation sticht mit einer alleinstehenden neuartigen Story heraus. Dabei begleiten wir diesmal unseren Protagonisten durch die Sinnoh Region, welcher anfänglich wie üblich ein Starter Pokémon erhält. Dies geschieht, als dieser mit seinem Freund Barry – der Rivale der 4. Generation – den vergessenen Koffer des Pokémon Professors im hohen Gras findet und diesen dem Professor zurückbringen möchten. Den Koffer zu holen, stellt sich jedoch als schwieriger heraus als gedacht – der Protagonist und der Rivale werden dabei von wilden Pokémon angegriffen. Es ist schnelles Handeln gefragt, sodass sie sich entscheiden, sich jeweils ein Pokémon für den Kampf aus dem vergessenen Koffer des Professors auszuborgen. Es gelingt beiden sich zu verteidigen und der Professor beschließt, dass der Protagonist und der Rivale ihr jeweils ausgewähltes Pokémon behalten dürfen. Somit beginnt eine neue Reise durch eine neue Region, gemeinsam mit dem Rivalen Barry. Dieser handelt immer sehr überstürzt, ist aber im Grunde genommen (im Gegensatz zu Voreditionen) reinen Herzens. In der 4. Generation stellt nicht nur das Besiegen des Pokémon Champs Cynthia, eine besonders starke Pokémon Trainerin, eine Herausforderung dar, sondern auch die Interaktion mit dem mysteriösen Team Galaktik. Dieses greift in die Energieversorgung der Region ein und beeinflusst diese negativ und möchte möglichst viel über die Energien, die durch Pokémon freigesetzt werden kann, herausfinden – anfangs aus unbekannten Gründen. Sogar mehrere Mitglieder des Team Galaktik wissen nicht, wieso sie so handeln, wie sie es tun, sie vertrauen dabei lediglich auf ihren Anführer Zyrus. Beim Aufeinandertreffen mit diesem wird klar, dass ein größenwahnsinniger Plan hinter den Taten von Team Galaktik steht: Zyrus möchte das Universum wie die Sinnoh Region es kennt vernichten und ein komplett Neues erschaffen, in welchem er von Anbeginn der Zeit Herrscher über alles und jeden ist. In dieser Generation wird mehr über die Hintergründe der Entstehung des Pokémon Universums in Erfahrung gebracht. Es wird das Gott- Pokémon Arceus vorgestellt, welcher Anführer des Dimensions-Trios – Dialga, Palkia und Giratina – und des Seen-Trios - Selfe, Vesprit und Tobutz – ist. Letzteres wird im Laufe der Spielgeschichte durch Team Galaktik gestohlen mit dem Zweck ihre Energie abzusaugen. Durch diese erlangte Energie beschwört Zyrus je nach Edition eines der legendären Pokémon des Dimensions-Trios hervor – in Diamant Dialga, der Meister der Zeit und in Perl Palkia, der Meister des Raumes, womit sie gemeinsam unter Arceus das Raum-Zeit Gefüge kontrollieren. Der Plan von Team Galaktik geht jedoch in keiner Edition auf, das erwachte legändere Pokémon ist erbost, beschworen zu werden, um das mitkreierte Pokémon-Universum zu zerstören und richtet sich gegen das Team Galaktik. Mithilfe des jeweiligen legendären Pokémon kann der Held zuletzt also Cyrus und sein Team besiegen und die Sinnoh Region vor der Zerstörung bewahren.<br/>
+                    <br/>
+                    Die Zusatzedition setzt auf den Hauptedition an und bietet die Möglichkeit das dritte Pokémon des Dimensions-Trios kennenzulernen. Dabei handelt es sich um Giratina, Meister der Antimaterie, welcher mit der Zerrwelt das Gegenstück zu dem Raum-Zeit Gefüge von Dialga und Palkia bilden soll. Giratina ist aber anders als die anderen beiden legendären Pokémon aufsässig in seinem Verhalten, weshalb es durch den Schöpfer Arceus in die durch Giratina eigens kreierte Zerrwelt verbannt wird. Jene Geschichte und die tatsächliche Zerrwelt bildet den Hauptbestandteil der Zusatzedition Platin.
+                </p>
+            </div>
+
+            <!-- Spiele -->
+            <div class="poke-games-wrapper three-children">
+                <div class="poke-games-header-wrapper">
+                    <h3 class="poke-games-header">Hauptspiele der Generation</h3>
+                </div>
+                <div class="poke-games">
+                    <img class="gen-pictures" src="res/img/Gen%204/diamond.jpg" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures" src="res/img/Gen%204/pearl.jpg" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures" src="res/img/Gen%204/platin.jpg" alt="Pokemonspiel Bild">
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div class="dialog-hint-wrapper sales-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Sales </strong><br/>
+                        Gegen dem Abwärts-Trend vorangegangener Generationen, verkaufte sich die vierte Generation mit 25 Millionen Stück, besser als die dritte Generation. Dies liegt unter anderem an der neuen Konsole in Form des Nintendo-DS, welcher den GameBoy Advance ablöste.
+                    </li>
+                </ul>
+                <div id="sales_4" class="chart-wrapper"></div>
+            </div>
+
+
+            <!-- Anzahl -->
+            <div class="dialog-hint-wrapper anzahl-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Anzahl der Pokémon </strong><br/>
+                        Neben den 125 neu eingeführten Pokemon steigt die Anzahl der verfügbaren Taschenmonster auf fast 500 an. Zudem beinhaltet die vierte Generation die meisten Pokemon, welche sich entwickeln können (29 Stück). Mit 13 legendären Pokemon steigt zudem die Anzahl der „Legis“ auf insgesamt 24 Pokemon an.
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <button id="all_4">Alle Pokémon</button>
+                    <button id="legendary_4">Legendäre Pokémon</button>
+                </div>
+                <div id='anzahl_4' class="chart-wrapper"></div>
+            </div>
+
+            <!-- Typenverteilung -->
+            <div class="dialog-hint-wrapper type-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Typenverteilung </strong><br/>
+                        Obwohl in der 4. Generation 107 Pokémon eingeführt wurden, gibt es hier trotzdem lediglich 5 verschiedene Pokémon des Primärtyps Feuer. Da liegen die wohl klassischsten aller Erzfeinde von Feuer Pokémon – die Wasser Pokémon – in dieser Generation klar im Vorteil.
+                        Ziemlich ernüchternd, wenn man bedenkt, dass es immer einen Feuer-Starter gibt und die 4. Generation nicht jene ist, welche die wenigsten Pokémon beinhaltet (sondern unsere geliebte 2. Generation). Hier sollte man sich seine Starter Wahl wohl genau überlegen, wenn man unbedingt ein Feuer Pokémon im Team haben möchte…
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <select id="selectButton_4"></select>
+                </div>
+                <div class="chart-wrapper type-and-chart">
+                    <div id="treemap4"></div>
+                    <div id="typen_4"></div>
+                </div>
+            </div>
+
+            <!-- Bubbles -->
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Alle Pokemon der Generation</strong><br/>
+                        Klick auf die Bubbles, um noch mehr über die Pokémon der vierten Generation zu erfahren!
+                    </li>
+                </ul>
+            </div>
+            <div id="bubbles-4">
+                <div class="poke-bubbles-wrapper row">
+                    <svg class="poke-bubbles col shadow-sm"></svg>
+                    <div class="poke-bubbles-details col card shadow-sm p-3 bg-white">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <div class="row">
+                                    <div class="col-auto poke-pic-wrapper">
+                                        <img class="poke-pic" loading="lazy" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Pokemon Sprite">
+                                    </div>
+                                    <div class="col poke-detail-title">
+                                        <span>#1 Bisasam</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <dl class="row">
+                                <dt class="col-sm-5 mb-4">Pokemon Name</dt>
+                                <dd class="col-sm-7 mb-4 poke-detail-name">Bisasam</dd>
+
+                                <dt class="col-sm-5 mb-2">Primär Typ</dt>
+                                <dd class="col-sm-7 mb-2 poke-detail-type1"><span class="background-color-grass">Pflanze</span></dd>
+
+                                <dt class="col-sm-5 mb-4">Sekundär Typ</dt>
+                                <dd class="col-sm-7 mb-4 poke-detail-type2"></dd>
+                            </dl>
+                            <div class="poke-stats-wrapper">
+                                <svg class="poke-stats"></svg>
+                            </div>
+                            <div>
+                                <!-- TODO strong against -->
+                                <!-- TODO weak against -->
+                            </div>
+                            <div class="poke-detail-wiki-link">
+                                <a href="https://www.pokewiki.de/?search=Bisasam" target="_blank">Pokewiki Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        Fällt dir die größte Bubble von allen auf? Wie du vielleicht schon erwartet hast, stellt diese Bubble den in der 4. Generation vorgestellten Gott der Pokémon dar – Arceus. Dieser hat mit einem Wert von 720 von allen Pokémon der fünf Generationen den höchsten Total Base. Wäre ja auch widersprüchlich, wenn Gott höchstpersönlich gegen ein Bidiza verlieren würde (obwohl hier wohl andere das Gegenteil behaupten würden 😉).
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Funfact -->
+            <div class="dialog-funfact">
+                <img style="padding: 0 20px;" class="dialog-funfact-img" src="res/img/Elevoltek.png" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Apropos Stromversorgung, wusstest du, dass das in der 4. Spielgeneration vorgestellte Elektro-Pokémon Elevoltek allein genug Strom erzeugen, um eine Großstadt ein Jahr lang zu versorgen?
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog-funfact reverse">
+                <img style="padding: 0 20px;" class="dialog-funfact-img" src="res/img/poke_slitmachine.jpg" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Die Spiele der vierten Generation stellte die letzten dar, in welcher die Möglichkeit von Glückspielen implementiert war. Als jedoch immer mehr Gesetze gegen Glückspiele erlassen wurden, wurde das Prinzip fallen gelassen.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Generation 5 -->
+        <div class="generation-wrapper">
+            <h2 class="gen-header">Generation 5</h2>
+            <div class="dialog-text-wrapper">
+                <p class="dialog-text">
+                    Das Abenteuer der 5. Generation führt uns in die Einall Region – die erste Region, welche nicht einem Teil von Japan nachempfunden ist, sondern der Stadt New York. Die Reise beginnt in dem Haus des Protagonisten, gemeinsam mit seinen 2 Freunden – Cheren und Bell. Somit gibt es auch in dieser Generation gleich 2 Rivalen, wobei Cheren wie der Protagonist Pokémon Champ werden möchte, während Bell sich eher in der Pokémon Forschung sieht. Die 3 Starter Pokémon werden an die 3 Freunde durch die Pokémon Professorin vergeben, womit die Reise starten kann. Es gilt wieder die 8 Arenaleiter zu besiegen, um schlussendlich die Top Vier und den amtierenden Pokémon Champ herausfordern zu können. Auch in dieser Generation wird der Weg dorthin aber durch eine Organisation erschwert: Das Team Plasma. Dieses wirkt zunächst jedoch nicht wie die klassischen Bösewichte, man könnte fast das Gegenteil behaupten – sie preisen in der Einall Region an, für die Freiheit der Pokémon kämpfen zu wollen, sodass diese nicht mehr für ihre Trainer gezwungene Kämpfe bestreiten müssen. An der Spitze des Team Plasmas steht deren König, N, gemeinsam mit seinem engsten Berater G-Cis, welcher weiters Gründer der Organisation ist. G-Cis zählt zu den sieben Weisen des Teams Plasma, den ranghöchsten Mitgliedern der Verbrecherorganisation. Gemeinsam mit diesen preist G-Cis in der ganzen Einall Region an, dass N die Sprache der Pokémon versteht und es seine Bestimmung ist, diese aus der angeblichen Gefangenschaft ihrer Trainer zu befreien. Dies soll N, je nach Edition, mithilfe des legendären, aber noch nie gesehenen, Pokémon Reshiram bzw. Zekrom gelingen. Die beiden legendären Drachen-Pokémon gelten gemeinsam mit einem Zwillingspaar als die Erschaffer der Einall-Region. Laut der Legende waren sie früher ein einziger Drache, doch die Zwillings-Trainer hatten mit gegensätzlichen Ideologien – dem Wunsch und der Wirklichkeit – zu kämpfen, womit sich der Drache in Reshiram und Zekrom gespalten hatte – Reshiram verfolgte die Vorstellung der Wirklichkeit, Zekrom die des Wunsches. Tatsächlich gelingt es N, je nach Edition, mit dem Protagonisten auf der Spur, eins der Drachen Pokémon zu finden. Doch der Protagonist ist zu spät, N hat das legendäre Pokémon bereits gefangen. Es kommt jedoch zur Wende, das entgegengesetzte Drachen-Pokémon erscheint und offenbart sich unserem Helden. Somit kann unser Protagonist gemeinsam mit einem der legendären Drachen-Pokémon N und dem entgegengesetzten Drachen-Pokémon entgegentreten und besiegen. Doch auch hier ist die Aufregung noch nicht vorbei. Aus dem Nichts erscheint G-Cis, der N eine Standpauke hält, wie er nur verlieren konnte, nachdem sich herausstellt, dass N eigentlich der Adoptivsohn von G-Cis ist. G-Cis klärt auf, dass er seinen Sohn nur ausgenutzt hat, um die breite Masse für sich zu gewinnen und dass die Ideologie rund um die Befreiung der Pokémon lediglich eine Lüge ist – das Ziel von G-Cis war es immer, über ganz Einall zu regieren, was ihm möglich gewesen wäre, wenn tatsächlich alle Bewohner ihre Pokémon hergegeben hätten, damit diese keine Kämpfe mehr bestreiten müssen. N war also immer nur eine Marionette von G-Cis, dem eigentlichen Fädenzieher. Für unseren Protagonisten bedeutet, dass ein weiterer Kampf, diesmal gegen G-Cis, um diesen von den wahren boshaften Machenschaften abzuhalten. Unserem Helden gelingt es, wodurch er nicht nur Pokémon Champ wird, sondern auch wortwörtlicher Held der Einall Region. G-Cis wird verhaftet – die anderen 6 der 7 Weisen sind jedoch nicht aufzufinden…<br/>
+                    <br/>
+                    Pokémon Schwarz und Weiß 2 setzen zwei Jahre später in der Einall Region an, mit einem neuen Protagonisten und neuen Rivalen. Unsere alten Rivalen wurden jedoch nicht vergessen – Cheren ist mittlerweile Arenaleiter und Belle ist die neue Pokémon Professorin. Nicht alle Mitglieder von Team Plasma haben sich ihre Fehler, so wie N eingestanden. Immer noch existiert eine extreme Abspaltung der Gruppe – natürlich geleitet von G-Cis, welcher sich befreien konnte. Es gilt also G-Cis erneut zu besiegen – mithilfe von N und die Einall Region von der extremen Abspaltung des Team Plasmas zu bewahren.
+                </p>
+            </div>
+
+            <!-- Spiele -->
+            <div class="poke-games-wrapper two-children">
+                <div class="poke-games-header-wrapper">
+                    <h3 class="poke-games-header">Hauptspiele der Generation</h3>
+                </div>
+                <div class="poke-games">
+                    <img class="gen-pictures" src="res/img/Gen%205/black.jpg" alt="Pokemonspiel Bild">
+                    <img class="gen-pictures" src="res/img/Gen%205/white.jpg" alt="Pokemonspiel Bild">
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div class="dialog-hint-wrapper sales-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Sales </strong><br/>
+                        Mit 15 Millionen verkauften Exemplaren stellt die fünfte Generation jedoch die am schwächsten verkaufte Generation dar, was gerade im Pie-Chart gut erkennbar ist. Insgesamt wurden somit 140 Millionen Exemplare der ersten fünf Generation verkauft.
+                    </li>
+                </ul>
+                <div id="sales_5" class="chart-wrapper"></div>
+            </div>
+
+
+            <!-- Anzahl -->
+            <div class="dialog-hint-wrapper anzahl-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Anzahl der Pokémon </strong><br/>
+                        Die Generation der Messis – wusstest du, dass mit der 5. Generation ganze 156 Pokémon eingeführt wurden? Somit stellt die 5. Generation jene mit dein meisten Pokémon dar, es sind also sogar 6 Pokémon mehr als beim Start des Spieles mit der 1. Generation!<br/>
+                        Auf diese Fülle wurde, während dem Spiel stark aufgebaut, sodass während der Hauptstory nur Pokemon der fünften Generation erhältlich waren, was einen Bruch zu den vorherigen Generationen darstellt.<br/>
+                        Auf der anderen Seite stellt die fünfte Generation die erste Generation dar, in welcher nicht mehr legendäre Pokemon wie beim Vorgänger eingeführt wurden.
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <button id="all_5">Alle Pokémon</button>
+                    <button id="legendary_5">Legendäre Pokémon</button>
+                </div>
+                <div id='anzahl_5' class="chart-wrapper"></div>
+            </div>
+
+            <!-- Typenverteilung -->
+            <div class="dialog-hint-wrapper type-viz">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Typenverteilung </strong><br/>
+                        Auch wenn die Typenverteilung bei der 5. Generation im Gegensatz zu den anderen Generationen mit keiner Besonderheit heraussticht, gibt es etwas anderes Interessantes zu bemerken. Es gibt zwar keine Änderung, dass Pokémon Typen oder sonstiges wechseln können, jedoch wurde in der 5. Generation der Faktor Wetter und Veränderung eingeführt. So kommt es, dass manche spezielle Pokémon, wie zum Beispiel Sesokitz, je nach Jahreszeit ihre Farbe ändern.
+                    </li>
+                </ul>
+                <div class="action-bar">
+                    <select id="selectButton_5"></select>
+                </div>
+                <div class="chart-wrapper type-and-chart">
+                    <div id="treemap5"></div>
+                    <div id="typen_5"></div>
+                </div>
+
+            </div>
+
+            <!-- Bubbles -->
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Alle Pokemon der Generation</strong><br/>
+                        Klick auf die Bubbles, um noch mehr über die Pokémon der vierten Generation zu erfahren!
+                    </li>
+                </ul>
+            </div>
+            <div id="bubbles-5">
+                <div class="poke-bubbles-wrapper row">
+                    <svg class="poke-bubbles col shadow-sm"></svg>
+                    <div class="poke-bubbles-details col card shadow-sm p-3 bg-white">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <div class="row">
+                                    <div class="col-auto poke-pic-wrapper">
+                                        <img class="poke-pic" loading="lazy" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Pokemon Sprite">
+                                    </div>
+                                    <div class="col poke-detail-title">
+                                        <span>#1 Bisasam</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <dl class="row">
+                                <dt class="col-sm-5 mb-4">Pokemon Name</dt>
+                                <dd class="col-sm-7 mb-4 poke-detail-name">Bisasam</dd>
+
+                                <dt class="col-sm-5 mb-2">Primär Typ</dt>
+                                <dd class="col-sm-7 mb-2 poke-detail-type1"><span class="background-color-grass">Pflanze</span></dd>
+
+                                <dt class="col-sm-5 mb-4">Sekundär Typ</dt>
+                                <dd class="col-sm-7 mb-4 poke-detail-type2"></dd>
+                            </dl>
+                            <div class="poke-stats-wrapper">
+                                <svg class="poke-stats"></svg>
+                            </div>
+                            <div>
+                                <!-- TODO strong against -->
+                                <!-- TODO weak against -->
+                            </div>
+                            <div class="poke-detail-wiki-link">
+                                <a href="https://www.pokewiki.de/?search=Bisasam" target="_blank">Pokewiki Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-hint-wrapper">
+                <ul class="dialog-hint">
+                    <li>
+                        Erst mit der 5. Generation hat ein Pokémon, Boreos, als Primärtyp Flug bekommen – davor war Flug lediglich als sekundärer Typ in den Spielen vertreten. Um diese Diskriminierung auszugleichen, wurde sich zumindest für das legendäre Pokémon Boreos entschieden. Durch diese Alleinstellung kannst du es sicher schnell bei den Bubbles finden.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Funfact -->
+            <div class="dialog-funfact">
+                <img style="padding: 0 20px; width: 400px; height: auto" class="dialog-funfact-img" src="res/img/seasons_poke.png" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Die Editionen Schwarz und Weiß sind die einzigen Spiele, welche einen Wechsel der Jahreszeiten beinhalten. Zum Protest vieler Fans wurde dieses Feature in den zukünftigen Generationen jedoch wieder weggelassen.
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog-funfact reverse">
+                <img style="padding: 0 20px; width: 400px; height: auto" class="dialog-funfact-img" src="res/img/kiums.png" alt="Pokemon-Bild">
+                <ul class="dialog-hint">
+                    <li>
+                        <strong>Funfact</strong><br/>
+                        Die drei legendären Pokemon „Ritter der Redlichkeit“ sind an die drei Musketiere angelehnt.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="dialog-text-wrapper">
+            <p class="dialog-text" style="text-align: center">
+                <br/>
+                <b style="font-size: 4rem">Vielen Dank fürs durchscrollen! 😉</b>
+                <br/>
+                <br/>
+            </p>
+        </div>
+
+    </div>
+<!--    <section>-->
+<!--        <h3 id="title-content"></h3>-->
+<!--        <div class="full-width-800h-wrapper">-->
+<!--            <div id="poke-bubbles-wrapper" class="row">-->
+<!--                <svg id="poke-bubbles" class="col-xl"></svg>-->
+<!--                <div id="poke-bubbles-details" class="col card shadow-sm p-3 bg-white">-->
+<!--                    <div class="card-body">-->
+<!--                        <div class="card-title">-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-auto poke-pic-wrapper">-->
+<!--                                    <img class="poke-pic" loading="lazy" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Pokemon Sprite">-->
+<!--                                </div>-->
+<!--                                <div class="col poke-detail-title">-->
+<!--                                    <span>#1 Bisasam</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <dl class="row">-->
+<!--                            <dt class="col-sm-5 mb-4">Pokemon Name</dt>-->
+<!--                            <dd class="col-sm-7 mb-4 poke-detail-name">Bisasam</dd>-->
+
+<!--                            <dt class="col-sm-5 mb-2">Primär Typ</dt>-->
+<!--                            <dd class="col-sm-7 mb-2 poke-detail-type1"><span class="background-color-grass">Pflanze</span></dd>-->
+
+<!--                            <dt class="col-sm-5 mb-4">Sekundär Typ</dt>-->
+<!--                            <dd class="col-sm-7 mb-4 poke-detail-type2"></dd>-->
+<!--                        </dl>-->
+<!--                        <div id="poke-stats-wrapper">-->
+<!--                            <svg id="poke-stats"></svg>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            &lt;!&ndash; TODO strong against &ndash;&gt;-->
+<!--                            &lt;!&ndash; TODO weak against &ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="poke-detail-wiki-link">-->
+<!--                            <a href="https://www.pokewiki.de/?search=Bisasam" target="_blank">Pokewiki Link</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row align-items-center">-->
+<!--            <div class="col-sm"><div id="slider-time"></div></div>-->
+<!--        </div>-->
+<!--    </section>-->
+    <script type="module" src="res/js/main.js"></script>
+</body>
+
+</html>

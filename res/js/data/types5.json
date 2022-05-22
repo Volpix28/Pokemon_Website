@@ -1,0 +1,78 @@
+{
+    "children": [
+        {
+            "type": "Käfer",
+            "value": 63
+        },
+        {
+            "type": "Unlicht",
+            "value": 43
+        },
+        {
+            "type": "Drache",
+            "value": 29
+        },
+        {
+            "type": "Elektro",
+            "value": 40
+        },
+        {
+            "type": "Fee",
+            "value": 22
+        },
+        {
+            "type": "Kampf",
+            "value": 40
+        },
+        {
+            "type": "Feuer",
+            "value": 50
+        },
+        {
+            "type": "Flug",
+            "value": 82
+        },
+        {
+            "type": "Geist",
+            "value": 28
+        },
+        {
+            "type": "Pflanze",
+            "value": 76
+        },
+        {
+            "type": "Boden",
+            "value": 60
+        },
+        {
+            "type": "Eis",
+            "value": 33
+        },
+        {
+            "type": "Gift",
+            "value": 53
+        },
+        {
+            "type": "Psycho",
+            "value": 68
+        },
+        {
+            "type": "Gestein",
+            "value": 47
+        },
+        {
+            "type": "Stahl",
+            "value": 37
+        },
+        {
+            "type": "Wasser",
+            "value": 109
+        },
+        {
+            "type": "Normal",
+            "value": 89
+        }
+
+    ]
+
+}
